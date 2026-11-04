@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=77"]
+requires = ["setuptools>=84.2.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -51,24 +51,24 @@ dependencies = [
 # Optional AI analysis (--ai): sends scanned workflow/action content and tool
 # findings to the Anthropic API. See SECURITY.md for the data-flow disclosure.
 ai = [
-    "anthropic>=2.0",
+    "anthropic>=2.3.0",
 ]
 # PDF report generation (--pdf).
 pdf = [
-    "fpdf2>=2.8",
+    "fpdf2>=2.8.9",
 ]
 full = [
-    "anthropic>=2.0",
-    "fpdf2>=2.8",
+    "anthropic>=2.3.0",
+    "fpdf2>=2.8.9",
 ]
 dev = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
-    "flake8>=6.0",
-    "mypy>=1.0",
-    "black>=24.0",
-    "build>=1.0",
-    "pip-audit>=2.7",
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "flake8>=7.4.1",
+    "mypy>=2.4.1",
+    "black>=26.10.1",
+    "build>=1.6.1",
+    "pip-audit>=2.10.1",
 ]
 
 [project.urls]
