@@ -1,0 +1,57 @@
+ActChain - Third-Party Software Notices and Information
+
+This software incorporates or depends upon the following third-party software:
+
+1. zizmor
+   License: MIT License
+   Copyright: Copyright (c) 2024 William Woodruff
+   Source: https://github.com/zizmorcore/zizmor
+   Note: Invoked as an external command-line tool.
+
+2. OpenGrep
+   License: LGPL-2.1 License
+   Source: https://github.com/opengrep/opengrep
+   Note: OpenGrep is a fork of the Semgrep community engine
+   (Copyright (c) Semgrep, Inc.). Used as an external command-line tool
+   (no linking); it is an optional scanner that users install separately.
+
+3. PyGithub
+   License: LGPL-3.0 License
+   Copyright: Copyright 2012 Vincent Jacques
+   Source: https://github.com/PyGithub/PyGithub
+   This project uses PyGithub (LGPL v3).
+   You may replace it with another compatible library (e.g., GitPython)
+   by updating the dependencies and adjusting the code in
+   actchain/core/github_client.py accordingly.
+
+4. Rich
+   License: MIT License
+   Copyright: Copyright (c) 2020 Will McGugan
+   Source: https://github.com/Textualize/rich
+
+5. Click
+   License: BSD-3-Clause License
+   Copyright: Copyright 2014 Pallets
+   Source: https://github.com/pallets/click
+
+6. PyYAML
+   License: MIT License
+   Copyright: Copyright (c) 2017-2021 Ingy döt Net; Copyright (c) 2006-2016 Kirill Simonov
+   Source: https://github.com/yaml/pyyaml
+
+7. Requests
+   License: Apache-2.0 License
+   Copyright: Copyright Kenneth Reitz and contributors
+   Source: https://github.com/psf/requests
+
+8. urllib3
+   License: MIT License
+   Copyright: Copyright (c) 2008-2020 Andrey Petrov and contributors
+   Source: https://github.com/urllib3/urllib3
+
+9. certifi
+   License: MPL-2.0 License
+   Source: https://github.com/certifi/python-certifi
+
+The full license texts for these dependencies can be found in their respective
+source repositories or installed packages.

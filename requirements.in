@@ -1,0 +1,17 @@
+# requirements.in
+# Primary dependencies with minimum-secure floors.
+# Regenerate the lockfile with:
+#   uv pip compile requirements.in -o requirements.txt --generate-hashes --universal --python-version 3.10
+
+PyGithub>=2.7.0
+pyyaml>=6.0.2
+click>=8.1.8
+rich>=14.1.0
+# Floors below exclude releases with known security advisories:
+# requests  < 2.33.0 — CVE-2026-25645; < 2.32.4 — CVE-2024-47081, CVE-2024-35195
+# urllib3   < 2.8.0  — CVE-2026-97687/97689; < 2.6.x — CVE-2025-66418/66471, CVE-2026-21441/44431
+# certifi   < 2026.10.19 — GHSA-6q48-6c7w-9gw2 (compromised emSign roots removed)
+requests>=2.33.0
+urllib3>=2.8.0
+certifi>=2026.10.19
+zizmor>=1.11.0

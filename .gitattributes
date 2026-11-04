@@ -1,0 +1,9 @@
+# Normalize line endings
+* text=auto
+*.py text
+*.md text
+*.yml text
+*.yaml text
+*.toml text
+*.in text
+*.txt text

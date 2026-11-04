@@ -1,0 +1,12 @@
+include LICENSE
+include NOTICE
+include README.md
+include Documentation.md
+include SECURITY.md
+include CHANGELOG.md
+include requirements.in
+include requirements.txt
+include actchain/py.typed
+recursive-include actchain *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

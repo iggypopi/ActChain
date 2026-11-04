@@ -1,0 +1,96 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "actchain"
+version = "0.2.0"
+description = "A security analysis tool for GitHub Actions workflows and their dependencies"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    { name = "Igor Stepansky" },
+]
+keywords = [
+    "github-actions", "security", "scanning", "workflow", "ci-cd",
+    "devops", "supply-chain", "vulnerability", "analysis",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Topic :: Security",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Quality Assurance",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+# Floors exclude dependency releases with known security advisories; exact
+# tested versions are hash-pinned in requirements.txt.
+dependencies = [
+    "PyGithub>=2.7.0",
+    "pyyaml>=6.0.2",
+    "click>=8.1.8",
+    "rich>=14.1.0",
+    "requests>=2.33.0",
+    "urllib3>=2.8.0",
+    "certifi>=2026.10.19",
+    "zizmor>=1.11.0",
+]
+
+[project.optional-dependencies]
+# Optional AI analysis (--ai): sends scanned workflow/action content and tool
+# findings to the Anthropic API. See SECURITY.md for the data-flow disclosure.
+ai = [
+    "anthropic>=2.0",
+]
+# PDF report generation (--pdf).
+pdf = [
+    "fpdf2>=2.8",
+]
+full = [
+    "anthropic>=2.0",
+    "fpdf2>=2.8",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+    "black>=24.0",
+    "build>=1.0",
+    "pip-audit>=2.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/iggypopi/ActChain"
+"Source Code" = "https://github.com/iggypopi/ActChain"
+"Bug Tracker" = "https://github.com/iggypopi/ActChain/issues"
+"Security Policy" = "https://github.com/iggypopi/ActChain/blob/main/SECURITY.md"
+Changelog = "https://github.com/iggypopi/ActChain/blob/main/CHANGELOG.md"
+
+[project.scripts]
+actchain = "actchain.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["actchain*"]
+
+[tool.setuptools.package-data]
+actchain = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
